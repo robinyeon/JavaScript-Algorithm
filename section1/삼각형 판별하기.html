@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        let answer = "YES";
+        let max;
+        let sum = a + b + c;
+        if (a > b) max = a;
+        else max = b;
+        if (c > max) max = c;
+        if (sum - max <= max) answer = "NO";
+        return answer;
+      }
+
+      console.log(solution(13, 33, 17));
+    </script>
+  </body>
+</html>
+
+<!-- 삼각형: 짧은 막대 2개의 길이합이 가장 긴 막대의 길이 보다 커야한다. -->
+<!-- 상황에 따라 a,b,c 중 무엇이 가장 긴 막대(max)가 되었는지 알 수 없으니 sum을 활용한다. -->
