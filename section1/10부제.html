@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(day, arr) {
+        let lastNumArr = arr
+          .map((num) => String(num))
+          .map((StringifiedNum) => StringifiedNum[1])
+          .map((StringifiedLastNum) => Number(StringifiedLastNum));
+
+        let answer = lastNumArr.filter((lastNum) => lastNum === day).length;
+        return answer;
+      }
+
+      arr = [25, 23, 11, 47, 53, 17, 33];
+      console.log(solution(3, arr));
+    </script>
+  </body>
+</html>
+
+<!-- 괜히 다 맞춰놓고 type 때문에 실수하지 말기 -->
+<!-- 아래의 공식 답안이 더 깔끔하고 쉽다. -->
+<!-- 
+    let answer = 0;
+    for(let x of arr) {
+        if(x%10 === day) answer++
+    }    
+    return answer;
+}-->
