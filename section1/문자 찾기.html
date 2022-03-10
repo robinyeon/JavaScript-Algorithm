@@ -1,0 +1,43 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer,
+          count = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === t) count++;
+        }
+        answer = count;
+        return answer;
+      }
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = s.split(t).length;
+        return answer - 1;
+      }
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html>
+
+<!-- "R"을 구분자로 문자열이 배열로 들어가게 된다:  ['COMPUTE', 'P', 'OG', 'AMMING'] -->
+<!-- 만약 str = "COMPUTERPROGRAMMINGR"로 마지막에 R이 하나 더 붙었더라면: ['COMPUTE', 'P', 'OG', 'AMMING', '']-->
