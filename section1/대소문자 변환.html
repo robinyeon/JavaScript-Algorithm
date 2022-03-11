@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        for (let alphabet of s) {
+          if (alphabet === alphabet.toUpperCase())
+            answer += alphabet.toLowerCase();
+          else answer += alphabet.toUpperCase();
+        }
+        return answer;
+      }
+
+      console.log(solution("StuDY"));
+    </script>
+  </body>
+</html>
+
+<!-- let num = alphabet.charCodeAt();
+if (num >= 65 && num <= 90) answer += String.fromCharCode(num + 32);
+else answer += String.fromCharCode(num - 32); -->
