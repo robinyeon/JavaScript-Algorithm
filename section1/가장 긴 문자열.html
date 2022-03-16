@@ -6,12 +6,12 @@
   <body>
     <script>
       function solution(s) {
-        let answer,
-          max = Number.MIN_SAFE_INTEGER;
-        for (let x of s) {
-          if (x.length > max) {
-            max = x.length;
-            answer = x;
+        let answer;
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let word of s) {
+          if (word.length > max) {
+            max = word.length;
+            answer = word;
           }
         }
         return answer;
