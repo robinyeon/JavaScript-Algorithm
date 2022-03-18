@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer;
+        answer = s.filter((v, i) => {
+          return s.indexOf(v) === i;
+        });
+        return answer;
+      }
+      let str = ["good", "time", "good", "time", "student"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
+
+<!-- 내가 filter가 아닌 indexOf와 push 사용하여 풀이한 방법
+       let answer = [];
+        for (let i = 0; i < s.length; i++) {
+          if (s.indexOf(s[i]) === i) answer.push(s[i]);
+        }
+        return answer;
+ -->

@@ -29,8 +29,8 @@
   <body>
     <script>
       function solution(s, t) {
-        let answer = s.split(t).length;
-        return answer - 1;
+        let answer = s.split(t).length - 1;
+        return answer;
       }
 
       let str = "COMPUTERPROGRAMMING";
@@ -39,5 +39,15 @@
   </body>
 </html>
 
-<!-- "R"을 구분자로 문자열이 배열로 들어가게 된다:  ['COMPUTE', 'P', 'OG', 'AMMING'] -->
-<!-- 만약 str = "COMPUTERPROGRAMMINGR"로 마지막에 R이 하나 더 붙었더라면: ['COMPUTE', 'P', 'OG', 'AMMING', '']-->
+<!-- "R"을 구분자로 문자열이 배열로 들어가게 된다:  ['COMPUTE', 'P', 'OG', 'AMMING']
+만약 str = "COMPUTERPROGRAMMINGR"로 마지막에 R이 하나 더 붙었더라면: ['COMPUTE', 'P', 'OG', 'AMMING', '']-->
+
+<!-- indexOf를 활용하기("중복문자제거.html" 참고)
+  let answer = 0;
+  let position = s.indexOf(t);
+  while (position !== -1) {
+    answer++;
+    position = s.indexOf(t, position + 1);
+  }
+  return answer;
+ -->
