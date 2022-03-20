@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        for (alphabet of s) {
+          if (alphabet === alphabet.toLowerCase()) {
+            alphabet = alphabet.toUpperCase();
+            answer += alphabet;
+          } else {
+            alphabet = alphabet.toLowerCase();
+            answer += alphabet;
+          }
+        }
+        return answer;
+      }
+
+      console.log(solution("StuDY"));
+    </script>
+  </body>
+</html>

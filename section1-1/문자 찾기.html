@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = s.split("R").length - 1;
+        return answer;
+      }
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        for (let i = 0; i < s.length; i++) {
+          // console.log(s[i], i, s.indexOf(s[i]));
+          let answer = 0;
+          let position = s.indexOf(t);
+          while (position !== -1) {
+            answer++;
+            position = s.indexOf(t, position + 1);
+          }
+          return answer;
+        }
+      }
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        for (alphabet of s) {
+          if (alphabet === "A") {
+            alphabet = "#";
+            answer += alphabet;
+          } else answer += alphabet;
+        }
+        return answer;
+      }
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let re = /A/g;
+        let answer = s.replace(re, "#");
+        return answer;
+      }
+
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
