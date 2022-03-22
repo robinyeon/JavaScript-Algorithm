@@ -5,7 +5,29 @@
   </head>
   <body>
     <script>
-      function solution(arr) {}
+      function solution(arr) {
+        let answer = Number.MIN_SAFE_INTEGER;
+        let n = arr.length;
+        let hSum = 0;
+        let vSum = 0;
+        for (let i = 0; i < n; i++) {
+          hSum = 0;
+          vSum = 0;
+          for (let j = 0; j < n; j++) {
+            hSum += arr[i][j];
+            vSum += arr[j][i];
+          }
+          answer = Math.max(answer, hSum, vSum);
+        }
+        let dSum1 = 0;
+        let dSum2 = 0;
+        for (let i = 0; i < n; i++) {
+          dSum1 += arr[i][i];
+          dSum2 += arr[i][n - i - 1];
+        }
+        answer = Math.max(answer, dSum1, dSum2);
+        return answer;
+      }
 
       let arr = [
         [10, 13, 10, 12, 15],
