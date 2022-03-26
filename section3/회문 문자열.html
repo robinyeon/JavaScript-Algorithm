@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let n = s.length;
+        let lowerCased = s.toLowerCase();
+        let reversed = "";
+        for (let i = n - 1; i >= 0; i--) {
+          reversed += lowerCased[i];
+        }
+        if (reversed === lowerCased) return "YES";
+        else return "NO";
+      }
+
+      let str = "gooG";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
+
+<!-- 첫번째 풀이법: 길이 나누기 2의 몫까지 반복문 돌기 -->
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "YES";
+        s = s.toLowerCase();
+        let len = s.length;
+        for (let i = 0; i < Math.floor(len / 2); i++) {
+          if (s[i] !== s[len - i - 1]) return "NO";
+        }
+        return answer;
+      }
+
+      let str = "gooG";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
+
+<!-- 두번째 풀이법: reverse 메소드 사용 -->
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "YES";
+        s = s.toLowerCase();
+        if (s.split("").reverse().join("") !== s) return "NO";
+        return answer;
+      }
+
+      let str = "gooT";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
