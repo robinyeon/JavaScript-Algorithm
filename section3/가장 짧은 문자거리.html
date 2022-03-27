@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = [];
+        let n = s.length;
+        let p = 1000;
+        // 왼쪽->오른쪽 돌면서 t로부터의 거리
+        for (let i = 0; i < n; i++) {
+          if (s[i] === t) {
+            p = 0;
+            answer.push(p);
+          } else {
+            p++;
+            answer.push(p);
+          }
+        }
+        // 오른쪽->왼쪽 돌면서 t로부터의 거리
+        p = 1000;
+        for (let i = n - 1; i >= 0; i--) {
+          if (s[i] !== t) {
+            p++;
+            if (p < answer[i]) {
+              answer[i] = p;
+            }
+          } else {
+            p = 0;
+            answer[i] = p;
+          }
+        }
+        return answer;
+      }
+      let str = "teachermode";
+      console.log(solution(str, "e"));
+    </script>
+  </body>
+</html>

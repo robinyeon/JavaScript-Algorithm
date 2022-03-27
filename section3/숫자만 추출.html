@@ -1,0 +1,70 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = str.replace(/[^0-9]/g, "");
+        if (answer[0] === "0") {
+          let withoutZero = "";
+          for (let i = 1; i < answer.length; i++) {
+            withoutZero += answer[i];
+          }
+          answer = withoutZero;
+        }
+        return answer;
+      }
+
+      let str = "g0en2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
+
+<!-- isNaN과 parseInt 사용 -->
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = "";
+        for (let x of str) {
+          if (!isNaN(x)) answer += x;
+        }
+        return parseInt(answer);
+        // isNaN(str) 문자열 안에서 숫자 뽑아내고
+        // parseInt로 정수형만 뽑아낸다
+      }
+
+      let str = "g0en2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
+
+<!-- answer를 숫자 0으로 두고 푸는 방법 -->
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(str) {
+        let answer = 0;
+        for (let x of str) {
+          if (!isNaN(x)) answer = answer * 10 + Number(x);
+        }
+        return answer;
+      }
+
+      let str = "g0en2T0s8eSoft";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
