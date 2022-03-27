@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = [];
+        let count = 0;
+        for (let alphabet of s) {
+          if (alphabet === t) count = 0;
+          else count++;
+          answer.push(count);
+        }
+        count = 0;
+        for (let i = s.length - 1; i >= 0; i--) {
+          if (s[i] !== t) count++;
+          else count = 0;
+          if (count < answer[i]) answer[i] = count;
+        }
+        return answer;
+      }
+
+      let str = "teachermode";
+      console.log(solution(str, "e"));
+    </script>
+  </body>
+</html>
