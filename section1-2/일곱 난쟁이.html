@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {}
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
+
+<!-- let answer = arr은 얕은복사: 메모리내 존재하는 하나의 [20, 7, ... , 13]을 동시에 가리킨다. -->
+<!-- arr.splice(i,1) arr의 i번째 인덱스 1개를 제거하라는 뜻 -->
+<!-- splice를 두번째로 실행할 시 인덱스의 값이 바뀌게 되니 주의하기: 뒤에 존재하는 인덱스인 j를 먼저 지우면 해결될 일 -->
