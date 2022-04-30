@@ -5,19 +5,17 @@
   </head>
   <body>
     <script>
-      function solution(s) {}
+      function solution(s) {
+        let answer = "";
+        for (let alphabet of s) {
+          if (answer.indexOf(alphabet) === -1) {
+            answer += alphabet;
+          }
+        }
+        return answer;
+      }
 
       console.log(solution("ksekkset"));
     </script>
   </body>
 </html>
-
-<!-- 같은 문자의 개수 카운팅 하는 법
-        let answer = 0;
-        let pos = s.indexOf("k");
-        while (pos !== -1) {
-          answer++;
-          pos = s.indexOf("k", pos + 1);
-        }
-        return answer; 
- -->

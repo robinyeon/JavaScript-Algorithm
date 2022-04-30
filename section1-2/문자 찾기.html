@@ -5,7 +5,15 @@
   </head>
   <body>
     <script>
-      function solution(s, t) {}
+      function solution(s, t) {
+        let answer;
+        let count = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === t) count++;
+        }
+        answer = count;
+        return answer;
+      }
 
       let str = "COMPUTERPROGRAMMING";
       console.log(solution(str, "R"));

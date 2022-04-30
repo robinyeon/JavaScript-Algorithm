@@ -1,3 +1,25 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let lengthArray = s.map((word) => word.length);
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let i = 0; i < lengthArray.length; i++) {
+          if (lengthArray[i] > max) max = lengthArray[i];
+        }
+        let num = lengthArray.indexOf(max);
+        return s[num];
+      }
+      let str = ["teacher", "time", "student", "beautiful", "good"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
+
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -5,7 +27,17 @@
   </head>
   <body>
     <script>
-      function solution(s) {}
+      function solution(s) {
+        let answer;
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let word of s) {
+          if (word.length > max) {
+            max = word.length;
+            answer = word;
+          }
+        }
+        return answer;
+      }
       let str = ["teacher", "time", "student", "beautiful", "good"];
       console.log(solution(str));
     </script>

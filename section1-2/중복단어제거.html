@@ -5,9 +5,36 @@
   </head>
   <body>
     <script>
-      function solution(s) {}
+      function solution(s) {
+        let answer = [];
+        for (let word of s) {
+          if (answer.indexOf(word) === -1) answer.push(word);
+        }
+        return answer;
+      }
       let str = ["good", "time", "good", "time", "student"];
       console.log(solution(str));
     </script>
   </body>
 </html>
+
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = [];
+        for (let i = 0; i < s.length; i++) {
+          console.log(s[i], i, s.indexOf(s[i]));
+          if (i === s.indexOf(s[i])) answer.push(s[i]);
+        }
+        return answer;
+      }
+      let str = ["good", "time", "good", "time", "student"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html> -->
