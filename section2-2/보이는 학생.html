@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer;
+        let shownStudents = [];
+        let max = Number.MIN_SAFE_INTEGER;
+        for (let student of arr) {
+          if (student > max) {
+            max = student;
+            shownStudents.push(student);
+          }
+        }
+        answer = shownStudents.length;
+        return answer;
+      }
+
+      let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
