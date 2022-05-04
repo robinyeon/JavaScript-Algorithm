@@ -5,7 +5,37 @@
   </head>
   <body>
     <script>
-      function solution(arr) {}
+      function solution(arr) {
+        let answer;
+        let n = arr.length;
+        let sumArr = [];
+        let sum = 0;
+        for (let i = 0; i < n; i++) {
+          let horizontalSum = arr[i].reduce((acc, cur) => acc + cur, 0);
+          sumArr.push(horizontalSum);
+        }
+        for (let i = 0; i < n; i++) {
+          for (let j = 0; j < n; j++) {
+            sum += arr[j][i];
+          }
+          let verticalSum = sum;
+          sumArr.push(verticalSum);
+          sum = 0;
+        }
+        for (let i = 0; i < n; i++) {
+          sum += arr[i][i];
+        }
+        let toRightDiagonalSum = sum;
+        sumArr.push(toRightDiagonalSum);
+        sum = 0;
+        for (let i = 0; i < n; i++) {
+          sum += arr[i][n - i - 1];
+        }
+        let toLeftDiagonalSum = sum;
+        sumArr.push(toLeftDiagonalSum);
+        answer = Math.max(...sumArr);
+        return answer;
+      }
 
       let arr = [
         [10, 13, 10, 12, 15],
